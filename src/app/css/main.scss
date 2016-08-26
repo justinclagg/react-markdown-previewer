@@ -1,0 +1,22 @@
+
+$font-m: 16px;
+
+body {
+	font-family: sans-serif;
+	color: #000;
+	font-size: $font-m;
+}
+
+.left-col {
+	float: left;
+	margin: 10px 10px;
+}
+
+.right-col {
+	@extend .left-col;
+}
+ 
+ textarea {
+	 font-size: $font-m;
+	 resize: none;
+ }
