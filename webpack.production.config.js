@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 const SRC_DIR = path.resolve(__dirname, "src");
 const DIST_DIR = path.resolve(__dirname, "dist");
@@ -25,5 +26,12 @@ module.exports = {
 				loaders: ["style", "css", "sass"]
 			}
 		]
-	}
+	},
+	plugins: [
+		new webpack.DefinePlugin({
+			"process.env": {
+				"NODE_ENV": JSON.stringify("production")
+			}
+		})
+	]
 };

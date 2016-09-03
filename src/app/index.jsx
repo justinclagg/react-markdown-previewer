@@ -1,34 +1,31 @@
 import React from "react";
 import { render } from "react-dom";
 
-import { MarkdownBox } from "./components/MarkdownBox.jsx";
-import { EditorBox } from "./components/EditorBox.jsx";
+import { Markdown } from "./components/Markdown.jsx";
+import { Editor } from "./components/Editor.jsx";
+import { initialText } from "./components/initialText.js";
 
 require("./css/main.scss");
 
 class App extends React.Component {
-
+	
 	constructor() {
 		super();
-		this.state = {
-			text: "Your markdown goes here."
-		};
+		this.state = {text: initialText};
 	}
 
 	onTextChange(event) {
-		this.setState({
-			text: event.target.value
-		});
+		this.setState({text: event.target.value});
 	}
 
 	render() {
 		return (
 			<div className="row">
 				<div className="left-col">
-					<EditorBox text={this.state.text} changeText={this.onTextChange.bind(this)} />
+					<Editor text={this.state.text} onTextChange={this.onTextChange.bind(this)} />
 				</div>
 				<div className="right-col">
-					<MarkdownBox text={this.state.text} changeText={this.onTextChange.bind(this)} />
+					<Markdown text={this.state.text} />
 				</div>
 			</div>
 		);
