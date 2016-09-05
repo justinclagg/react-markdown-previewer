@@ -4,11 +4,10 @@
   "description": "Markdown previewer built with React.js",
   "main": "index.jsx",
   "scripts": {
-    "start": "npm run dev-build && webpack-dev-server --content-base src --inline --hot",
-    "dev-build": "npm run clean && webpack && npm run copy",
-    "prod-build": "npm run clean && webpack -p --config ./webpack.production.config.js && npm run copy",
-    "clean": "rm -r ./dist",
-    "copy": "cp ./src/index.html ./dist"
+    "start": "npm run dev && webpack-dev-server --content-base src --inline --hot",
+    "dev": "npm run clean && webpack",
+    "prod": "npm run clean && webpack -p --config ./webpack.production.config.js",
+    "clean": "rm -r ./dist"
   },
   "keywords": [
     "reactjs"

@@ -6,9 +6,8 @@ const DIST_DIR = path.resolve(__dirname, "dist");
 module.exports = {
 	entry: SRC_DIR + "/app/index.jsx",
 	output: {
-		path: DIST_DIR + "/app",
-		filename: "bundle.js",
-		publicPath: "/app/"
+		path: DIST_DIR,
+		filename: "bundle.js"
 	},
 	module: {
 		loaders: [
